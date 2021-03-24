@@ -118,43 +118,6 @@ ${ProgramsSetup_Install_Chocolatey}.Add_Click({
     ${WShell}.Popup("Operation completed",0,"$(${ProgramsSetup_Install_Chocolatey}.Text)",0x0)
 })
 
-${ProgramsSetup_Install_7Zip}.Add_Click({
-    Write-Host "Installing 7-Zip... "
-    choco install 7zip.install -y
-    ${WShell}.Popup("Operation completed",0,"$(${ProgramsSetup_Install_7Zip}.Text)",0x0)
-})
-
-${ProgramsSetup_Install_Steam}.Add_Click({
-    Write-Host "Installing Steam... "
-    choco install steam -y
-    ${WShell}.Popup("Operation completed",0,"$(${ProgramsSetup_Install_Steam}.Text)",0x0)
-})
-
-${ProgramsSetup_Install_Rwc}.Add_Click({
-    Write-Host "Installing Reddit Wallpaper Changer... "
-    choco install reddit-wallpaper-changer -y
-    ${WShell}.Popup("Operation completed",0,"$(${ProgramsSetup_Install_Rwc}.Text)",0x0)
-})
-
-${ProgramsSetup_Install_Egl}.Add_Click({
-    Write-Host "Installing Epic Games Launcher... "
-    choco install epicgameslauncher -y
-    ${WShell}.Popup("Operation completed",0,"$(${ProgramsSetup_Install_Egl}.Text)",0x0)
-})
-
-${ProgramsSetup_Install_Spotify}.Add_Click({
-    Write-Host "Installing Spotify... "
-    choco install spotify -y
-    ${WShell}.Popup("Operation completed",0,"$(${ProgramsSetup_Install_Spotify}.Text)",0x0)
-})
-
-${ProgramsSetup_Install_Discord}.Add_Click({
-    Write-Host "Installing Discord... "
-    choco install discord.install -y
-    ${WShell}.Popup("Operation completed",0,"$(${ProgramsSetup_Install_Discord}.Text)",0x0)
-    Write-Host "Operation completed"
-})
-
 ${ProgramsSetup_Install_Bleachbit}.Add_Click({
     Write-Host "Installing BleachBit... "
     choco install bleachbit.install -y
@@ -763,12 +726,12 @@ ${SystemReadiness_Apply}.Add_Click({
 })
 
 ${ThirdpartyContainer_Sconfig}.Add_Click({
-    @powershell sconfig
+    Invoke-Expression -Command "sconfig"
 })
 
 ${threshold-srs}.Controls.AddRange(@(${ProgramsContainer},${SystemAdministration},${ThirdpartyContainer}))
-${ProgramsContainer}.Controls.AddRange(@(${ProgramsSetup},${ProgramsSetup_Install_Chocolatey},${ProgramsSetup_Install_7zip},${ProgramsSetup_Install_Steam},${ProgramsSetup_Install_Origin},${ProgramsSetup_Install_Rwc},${ProgramsSetup_Install_Egl},${ProgramsSetup_Install_Spotify},${ProgramsSetup_Install_Discord},${ProgramsSetup_Install_Bleachbit},${SystemReadiness_Apply},${ProgramsSetup_Uninstall_Chocolatey},${ProgramsSetup_CheckForUpdates_Chocolatey}))
-${SystemAdministration}.Controls.AddRange(@(${SystemReadiness},${SystemReadiness_Apply},${SystemReadiness_RemoveAllUwp},${SystemReadiness_RemoveAllUwpApps},${SystemReadiness_RemoveUwpApps}))
+${ProgramsContainer}.Controls.AddRange(@(${ProgramsSetup},${ProgramsSetup_Install_Chocolatey},${ProgramsSetup_Install_Bleachbit},${SystemReadiness_Apply},${ProgramsSetup_Uninstall_Chocolatey},${ProgramsSetup_CheckForUpdates_Chocolatey}))
+${SystemAdministration}.Controls.AddRange(@(${SystemReadiness},${SystemReadiness_Apply})
 ${ThirdpartyContainer}.Controls.AddRange(@(${ThirdpartyContainer_Label},${ThirdpartyContainer_Sconfig}))
 
 if (${OsEdition} -ne "${validatedOsEdition}") {
