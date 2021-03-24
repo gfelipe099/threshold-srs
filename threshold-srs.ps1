@@ -731,7 +731,7 @@ ${ThirdpartyContainer_Sconfig}.Add_Click({
 
 ${threshold-srs}.Controls.AddRange(@(${ProgramsContainer},${SystemAdministration},${ThirdpartyContainer}))
 ${ProgramsContainer}.Controls.AddRange(@(${ProgramsSetup},${ProgramsSetup_Install_Chocolatey},${ProgramsSetup_Install_Bleachbit},${SystemReadiness_Apply},${ProgramsSetup_Uninstall_Chocolatey},${ProgramsSetup_CheckForUpdates_Chocolatey}))
-${SystemAdministration}.Controls.AddRange(@(${SystemReadiness},${SystemReadiness_Apply})
+${SystemAdministration}.Controls.AddRange(@(${SystemReadiness},${SystemReadiness_Apply}))
 ${ThirdpartyContainer}.Controls.AddRange(@(${ThirdpartyContainer_Label},${ThirdpartyContainer_Sconfig}))
 
 if (${OsEdition} -ne "${validatedOsEdition}") {
