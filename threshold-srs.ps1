@@ -9,11 +9,11 @@ Clear-Host
 
 ### Check system version and edition ###
 if (!${validatedOsVersion}) {
-    New-Variable -Name validatedOsVersion -Value "10.0.14393" | Out-Null
+    New-Variable -Name validatedOsVersion -Value "10.0.20348" | Out-Null
 }
 
 if (!${validatedOsEdition}) {
-    New-Variable -Name validatedOsEdition -Value "Microsoft Windows Server 2016 Datacenter" | Out-Null
+    New-Variable -Name validatedOsEdition -Value "Microsoft Windows Server 2022 Datacenter" | Out-Null
 }
 
 if (!${OsVersion}) {
